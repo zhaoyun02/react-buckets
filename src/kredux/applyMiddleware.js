@@ -10,7 +10,7 @@ export default function applyMiddleware(...middlewares) {
     const midwareChains = middlewares.map((mid) => mid(midApi));
     // compose 返回的结果是函数,这个函数会根据传参数的类型来决定如何操作，是函数则执行函数，是对象则指定嵌套的内容
     dispatch = compose(...midwareChains)(dispatch);
-    console.log(dispatch);
+    // console.log(dispatch);
     return {
       ...store,
       dispatch,

@@ -51,7 +51,7 @@ function logger({ dispatch, getState }) {
 
 function thunk({ dispatch, getState }) {
   return (next) => {
-    console.log("thunk next", next);
+    // console.log("thunk next", next);
     return (action) => {
       console.log("thunk action", action);
       // action 数据类型是对象or函数
@@ -65,6 +65,6 @@ function thunk({ dispatch, getState }) {
 }
 const store = createStore(
   combineReducers({ count: countReducer, count2: count2Reducer }),
-  applyMiddleware(thunk, logger)
+  applyMiddleware(thunk)
 );
 export default store;

@@ -1,9 +1,11 @@
-import ReduxPage from "./pages/ReduxPage";
+// import ReduxPage from "./pages/ReduxPage";
 import "./App.css";
+import ReduxHookPage from "./pages/ReduxHookPage";
 function App() {
   return (
     <div className="App">
-      <ReduxPage />
+      {/* <ReduxPage /> */}
+      <ReduxHookPage/>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 export default function combineReducers(reducers) {
-  console.log(reducers);
+  // console.log(reducers);
   return function combination(state = {}, action) {
     let nextState = {}; //存储新值
     let hasChanged = false; //记录数据是否变化
