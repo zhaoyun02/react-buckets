@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 // import store from "../store";
 import store from "../store";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+// import { connect } from "react-redux";
+// import { bindActionCreators } from "redux";
+import { connect,bindActionCreators } from "../kreactredux/kReactRedux";
+// bindActionCreators 属于redux到函数，为方便写在来react-redux中
 //装饰器是HOC
 @connect(
   //mapStatetoProps
@@ -29,20 +31,20 @@ import { bindActionCreators } from "redux";
   }
 )
 class ReduxPage extends Component {
-  componentDidMount() {
-    this.unSubscribe = store.subscribe(() => {
-      this.forceUpdate();
-    });
-  }
-  componentWillUnmount() {
-    this.unSubscribe && this.unSubscribe();
-  }
+  // componentDidMount() {
+  //   this.unSubscribe = store.subscribe(() => {
+  //     this.forceUpdate();
+  //   });
+  // }
+  // componentWillUnmount() {
+  //   this.unSubscribe && this.unSubscribe();
+  // }
   addNum = () => {
     this.props.dispatch({ type: "ADD" });
   };
-  addNum2 = () => {
-    store.dispatch({ type: "ADD2" });
-  };
+  // addNum2 = () => {
+  //   store.dispatch({ type: "ADD2" });
+  // };
   asyncAddNum = () => {
     setTimeout(() => {
       store.dispatch({ type: "ADD" });
